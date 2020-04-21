@@ -9,14 +9,9 @@
 </head>
 
 <body>
-
-
-
     <div class="container">
-
         <div class="row justify-content-center">
             <div class="col-12 col-sm-8 col-lg-6">
-
                 <div class="page-header text-center py-2">
                     <h1>Bish-Bosh 2.0</h1>
                     <p>Bish-Bosh listar alla tal mellan 1 och [Maxtal], men vissa undantag: Om talet är jämnt delbart
@@ -28,12 +23,9 @@
         </div>
 
         <div class="row justify-content-center">
-            <!-- <div class="col-4">
-            </div> -->
+
             <div class="col-12 col-sm-8 col-lg-6">
                 <form id="myForm" class="needs-validation">
-                    <!-- novalidate -->
-                    <!-- onsubmit="runBishBosh" -->
                     <div class="form-group">
                         <label for="inputLoop">Loopa till:</label>
                         <input type="number" class="form-control" id="inputLoop" placeholder="loop" required min="0"
@@ -56,8 +48,7 @@
                 </form>
             </div>
         </div>
-        <!-- <div class="col-4">
-        </div> -->
+
         <div class="row justify-content-center pt-2">
             <div class="col-12">
                 <h4 class="text-center">Resultat:</h4>
@@ -85,32 +76,6 @@
     </script>
 
     <script>
-        let runBishBosh = function (loop, div1, div2) {
-            let str; //,strRet='' 
-            for (let i = 1; i <= loop; i++) {
-                str = ''
-                if (i % div1 === 0) str = '-Bish'
-                if (i % div2 === 0) str += '-Bosh'
-                str = (str.length) ? str.substr(1) : i;
-                //console.log(str); strRet+=str;
-                document.querySelector(".list-group").innerHTML += '<li class="list-inline-item list-group-item">' + str + '</li>';
-            } // return strRet;
-        }
-
-        //select your parent element
-        //var parentDiv = document.querySelector(".list-group");
-
-        //insert adjacent HTML as a string
-        //parentDiv.insertAdjacentHTML("beforeend",
-        //    "<div class='list-group-item col-xs-6 col-md-4'>ZZZZZ</div>");
-
-
-        document.getElementById("myForm").onsubmit = function () {
-            runBishBosh(document.getElementById("inputLoop").value, document.getElementById("inputFirstDiv").value,
-                document.getElementById("inputSecondDiv").value);
-            event.preventDefault();
-        }
     </script>
 </body>
-
 </html>
