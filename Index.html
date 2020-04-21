@@ -1,0 +1,10 @@
+<script>
+    let str;    
+    for (let i = 1; i <= 100; i++) {
+        str=''
+        if (i % 3===0) str ='-Bish'  
+        if (i % 4===0) str +='-Bosh'
+        str=(str.length) ? str.substr(1):i;
+        console.log(str);
+    }
+    </script>>
