@@ -1,13 +1,12 @@
-let printGrid = function (domParent, domChildTmp, strValue, cols) {
-    let domChild = domChildTmp.cloneNode(true);
-    domChild.innerHTML = strValue;
-    domParent.appendChild(domChild);
-    let cnt = domParent.childElementCount;
-    // compensate for new clear element
-    if (++cnt % ++cols === 0) domParent.innerHTML += '<div class="break"></div>';
-}
-
 let runBishBosh = function (loop, div1, div2) {
+    let printGrid = function (domParent, domChildTmp, strValue, cols) {
+        let domChild = domChildTmp.cloneNode(true);
+        domChild.innerHTML = strValue;
+        domParent.appendChild(domChild);
+        let cnt = domParent.childElementCount;
+        // compensate for new clear element
+        if (++cnt % ++cols === 0) domParent.innerHTML += '<div class="break"></div>';
+    }
     let str, domParent = document.querySelector(".bishbosh_parent"),
         domChildTmp = document.querySelector('template').content.cloneNode(true).firstElementChild,
         domChild;
