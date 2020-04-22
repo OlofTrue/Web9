@@ -6,6 +6,7 @@
     <title>Bish-Bosh 2.0</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -14,47 +15,48 @@
             <div class="col-12 col-sm-8 col-lg-6">
                 <div class="page-header text-center py-2">
                     <h1>Bish-Bosh 2.0</h1>
-                    <p>Bish-Bosh listar alla tal mellan 1 och [Maxtal], men vissa undantag: Om talet är jämnt delbart
-                        med [Bish tal] listas ‘Bish’ istället för talet. Om talet är jämnt delbart med [Bash tal] listas
-                        ‘ Bosh ’ istället för talet. Om talet är jämnt delbart med både med [Bish tal] och [Bash tal]
-                        skrivs “ Bish-Bosh ” istället för talet.</p>
+                    <p>Bish-Bosh listar alla tal mellan 1 och [Max-tal], men vissa undantag: Om talet är jämnt delbart
+                        med [Bish tal] listas "Bish" istället för talet. Om talet är jämnt delbart med [Bash-tal] listas
+                        "Bosh" istället för talet. Om talet är jämnt delbart med både med [Bish tal] och [Bash-tal]
+                        skrivs "Bish-Bosh" istället för talet.</p>
                 </div>
             </div>
         </div>
 
         <div class="row justify-content-center">
-
             <div class="col-12 col-sm-8 col-lg-6">
                 <form id="myForm" class="needs-validation">
                     <div class="form-group">
                         <label for="inputLoop">Loopa till:</label>
-                        <input type="number" class="form-control" id="inputLoop" placeholder="loop" required min="0"
-                            step="1" data-bind="value:replyNumber">
+                        <input type="number" class="form-control" id="inputLoop" placeholder="Ange maxtal" required
+                            min="0" max="999" step="1" data-bind="value:replyNumber">
                         <div class="invalid-feedback">Ange Maxtal!</div>
                     </div>
                     <div class="form-group">
                         <label for="inputFirstDiv">Första divisionstal (Bish tal):</label>
-                        <input type="number" class="form-control" id="inputFirstDiv" size="12" placeholder="bish"
+                        <input type="number" class="form-control" id="inputFirstDiv" size="12" placeholder="Ange bish"
                             required min="0" step="1" data-bind="value:replyNumber">
                         <div class="invalid-feedback">Ange Bish!</div>
                     </div>
                     <div class="form-group">
                         <label for="inputSecondDiv">Andra divisionstal (Bosh tal):</label>
-                        <input type="number" class="form-control" id="inputSecondDiv" placeholder="bosh" required
+                        <input type="number" class="form-control" id="inputSecondDiv" placeholder="Ange bosh" required
                             min="0" step="1" data-bind="value:replyNumber">
                         <div class="invalid-feedback">Ange Bosh!</div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Kör</button>
+                    <button type="submit" class="btn btn-primary">Skapa lista</button>
                 </form>
             </div>
         </div>
 
-        <div class="row justify-content-center pt-2">
+        <div class="row justify-content-center pt-4">
             <div class="col-12">
-                <h4 class="text-center">Resultat:</h4>
+                <h4 class="text-center">Bish-Bosh tal:</h4>
             </div>
-            <div class="col-4 col-md-2 col-xl-1">
-                <ul class="list-group list-inline list-group-flush"></ul>
+
+            <div class="col-12 justify-content-center">          
+                <div class="bishbosh_parent d-flex flex-wrap">
+                </div>
             </div>
         </div>
     </div>
@@ -65,6 +67,10 @@
         </div>
     </footer>
 
+    <template>
+        <div class="bishbosh p-2 border"></div>
+    </template>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -74,8 +80,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-
-    <script>
-    </script>
+    <script src="bishbosh.js"></script>
 </body>
+
 </html>

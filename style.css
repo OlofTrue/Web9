@@ -1,0 +1,19 @@
+.container hr {
+    width: 100%;
+  }
+
+/*   .bishbosh_parent:nth-child(5n) {
+    page-break-after: always;
+    break-after: always;
+  */
+  .bishbosh_parent {
+    justify-content: center
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+  .bishbosh{
+      width: 6rem;
+  }
