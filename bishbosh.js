@@ -4,12 +4,13 @@ let runBishBosh = function (loop, div1, div2) {
         domChild.innerHTML = strValue;
         domParent.appendChild(domChild);
         let cnt = domParent.childElementCount;
-        // compensate for new clear element
-        if (++cnt % ++cols === 0) domParent.innerHTML += '<div class="break"></div>';
+        let div = document.createElement('div');
+        div.setAttribute('class', 'break');
+        // test if new row after the extra clear element was added
+        if (++cnt % ++cols === 0) domParent.appendChild(div);
     }
     let str, domParent = document.querySelector(".bishbosh_parent"),
-        domChildTmp = document.querySelector('template').content.cloneNode(true).firstElementChild,
-        domChild;
+        domChildTmp = document.querySelector('template').content.cloneNode(true).firstElementChild;
     domParent.innerHTML = '';
     for (let i = 1; i <= loop; i++) {
         str = ''
@@ -26,6 +27,7 @@ document.getElementById("myForm").onsubmit = function (event) {
     runBishBosh(el.inputLoop.value, el.inputFirstDiv.value, el.inputSecondDiv.value);
     event.preventDefault();
 }
-
+//      html strings
+//      domParent.innerHTML += '<div class="break"></div>';
 //      domParent.innerHTML += '<div class="bishbosh p-2 border">' + str + '</div>'; 
 //      domParent.insertAdjacentHTML("beforeend",'<div class="bishbosh p-2 border">' + str + '</div>');
