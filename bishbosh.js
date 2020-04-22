@@ -23,10 +23,10 @@ let runBishBosh = function (loop, div1, div2) {
 }
 
 document.getElementById("myForm").onsubmit = function (event) {
-    el=this; //event.target document.getElementById("")
-    runBishBosh(el.inputLoop.value, el.inputFirstDiv.value,el.inputSecondDiv.value);
+    el = this; //event.target document.getElementById("")
+    runBishBosh(el.inputLoop.value, el.inputFirstDiv.value, el.inputSecondDiv.value);
     event.preventDefault();
 }
 
-        //      domParent.innerHTML += '<div class="bishbosh p-2 border">' + str + '</div>'; 
-        //      domParent.insertAdjacentHTML("beforeend",'<div class="bishbosh p-2 border">' + str + '</div>');
+//      domParent.innerHTML += '<div class="bishbosh p-2 border">' + str + '</div>'; 
+//      domParent.insertAdjacentHTML("beforeend",'<div class="bishbosh p-2 border">' + str + '</div>');
